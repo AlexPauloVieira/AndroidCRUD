@@ -1,0 +1,34 @@
+<resources>
+    <!--Nome na AppBar-->
+    <string name="app_name">Cadastro Produtos</string>
+
+    <!--Tela Login-->
+    <string name="btnLogin">Login</string>
+
+    <!--Tela Main-->
+    <string name="firstBtnMain">Cadastrar ou Listar</string>
+    <string name="secondBtnMain">Alterar ou Excluir</string>
+    <string name="txtBemVindo">Bem Vindo</string>
+    <string name="txtAO">Ao Nosso</string>
+    <string name="txtCRUD">Sistema CRUD</string>
+
+    <!--Tela Cadastro-->
+    <string name="firstLabel">Código de Barras</string>
+    <string name="secondLabel">Nome</string>
+    <string name="thirdLabel">Preço</string>
+    <string name="fourthLabel">Estoque</string>
+    <string name="buttonCadastro">Cadastrar</string>
+    <string name="buttonLimpar">Limpar</string>
+    <string name="buttonListar">Listar Produtos</string>
+
+    <!--Tela Alterar e Excluir-->
+    <string name="lblID">ID</string>
+    <string name="lblCodigoBarras">Código de Barras</string>
+    <string name="lblNomeProduto">Nome do Produto</string>
+    <string name="lblPrecoProduto">Preço do Produto</string>
+    <string name="lblQuantidadeProduto">Estoque</string>
+    <string name="buttonBucar">Buscar</string>
+    <string name="buttonExcluirProduto">Excluir</string>
+    <string name="buttonAlterarProduto">Alterar</string>
+
+</resources>

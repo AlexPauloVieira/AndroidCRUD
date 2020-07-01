@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="0.9"
+    android:background="@drawable/cup"
+    android:scaleType="centerCrop"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/firstBtnMain"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btn_bg"
+        android:capitalize="none"
+        android:onClick="alterarTela"
+        android:text="@string/firstBtnMain"
+        android:textAllCaps="false"
+        android:textColor="#ffcc00"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_rightmain"
+        app:layout_constraintStart_toStartOf="@+id/guideline_leftmain"
+        app:layout_constraintTop_toBottomOf="@id/txtCRUD" />
+
+    <Button
+        android:id="@+id/secondBtnMain"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btn_bg"
+        android:capitalize="none"
+        android:onClick="telaExcluir"
+        android:text="@string/secondBtnMain"
+        android:textAllCaps="false"
+        android:textColor="#ffcc00"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_rightmain"
+        app:layout_constraintStart_toStartOf="@+id/guideline_leftmain"
+        app:layout_constraintTop_toBottomOf="@id/firstBtnMain" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_leftmain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_rightmain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="24dp" />
+
+    <TextView
+        android:id="@+id/txtBemVindo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="132dp"
+        android:text="@string/txtBemVindo"
+        android:textColor="@android:color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_rightmain"
+        app:layout_constraintStart_toStartOf="@+id/guideline_leftmain"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtAO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/txtAO"
+        android:textColor="@android:color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_rightmain"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="@+id/guideline_leftmain"
+        app:layout_constraintTop_toBottomOf="@+id/txtBemVindo" />
+
+    <TextView
+        android:id="@+id/txtCRUD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/txtCRUD"
+        android:textColor="@android:color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_rightmain"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="@+id/guideline_leftmain"
+        app:layout_constraintTop_toBottomOf="@+id/txtAO" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
