@@ -41,22 +41,25 @@ public class alterar_excluirprodutos extends AppCompatActivity {
 
         String id = this.id.getText().toString();
 
-        try {
-            produto = produtoDao.obterProdutos(id);
-
-            this.id.setText(String.valueOf(produto.get(0).getID()));
-            codigoDeBarras.setText(String.valueOf(produto.get(0).getCodigoDeBarras()));
-            nome.setText(String.valueOf(produto.get(0).getNomeProduto()));
-            preco.setText(String.valueOf(produto.get(0).getPrecoProduto()));
-            quantidade.setText(String.valueOf(produto.get(0).getQuantidadeEstoque()));
+        if (id.equals("")  || id.trim().isEmpty()) {
+            Toast.makeText(this, "Campo ID não pode estar vazio!", Toast.LENGTH_LONG).show();
         }
-        catch (Exception e) {
-            Toast.makeText(this, "ID não encontrado", Toast.LENGTH_LONG).show();
-            this.id.setText(" ");
-            this.codigoDeBarras.setText(" ");
-            this.nome.setText(" ");
-            this.preco.setText(" ");
-            this.quantidade.setText(" ");
+        else {
+            try {
+                produto = produtoDao.obterProdutos(id);
+                this.id.setText(String.valueOf(produto.get(0).getID()));
+                codigoDeBarras.setText(String.valueOf(produto.get(0).getCodigoDeBarras()));
+                nome.setText(String.valueOf(produto.get(0).getNomeProduto()));
+                preco.setText(String.valueOf(produto.get(0).getPrecoProduto()));
+                quantidade.setText(String.valueOf(produto.get(0).getQuantidadeEstoque()));
+            } catch (Exception e) {
+                Toast.makeText(this, "ID não encontrado", Toast.LENGTH_LONG).show();
+                this.id.setText(" ");
+                this.codigoDeBarras.setText(" ");
+                this.nome.setText(" ");
+                this.preco.setText(" ");
+                this.quantidade.setText(" ");
+            }
         }
 
     }
