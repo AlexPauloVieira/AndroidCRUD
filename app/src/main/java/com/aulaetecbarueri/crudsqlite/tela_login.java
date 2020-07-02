@@ -25,7 +25,15 @@ public class tela_login extends AppCompatActivity {
         String loginStr = login.getText().toString();
         String passStr = pass.getText().toString();
 
-        if (loginStr.equals("admin") && passStr.equals("admin")){
+        if (loginStr.equals("")  || loginStr.trim().isEmpty()) {
+            Toast errorToast = Toast.makeText(tela_login .this, "Campo Usuário não pode estar vazio", Toast.LENGTH_SHORT);
+            errorToast.show();
+        }
+        else if (passStr.equals("") || passStr.trim().isEmpty()) {
+            Toast errorToast = Toast.makeText(tela_login .this, "Campo senha não pode estar vazio", Toast.LENGTH_SHORT);
+            errorToast.show();
+        }
+        else if (loginStr.equals(passStr)){
             this.trocar = new Intent(tela_login.this,MainActivity.class);
             startActivity(this.trocar);
         }

@@ -3,6 +3,7 @@ package com.aulaetecbarueri.crudsqlite;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -40,20 +41,23 @@ public class alterar_excluirprodutos extends AppCompatActivity {
 
         String id = this.id.getText().toString();
 
+        try {
             produto = produtoDao.obterProdutos(id);
 
-                System.out.println(produto.get(0).getID());
-                System.out.println(produto.get(0).getCodigoDeBarras());
-                System.out.println(produto.get(0).getNomeProduto());
-                System.out.println(produto.get(0).getPrecoProduto());
-                System.out.println(produto.get(0).getQuantidadeEstoque());
-
-                this.id.setText(String.valueOf(produto.get(0).getID()));
-                codigoDeBarras.setText(String.valueOf(produto.get(0).getCodigoDeBarras()));
-                nome.setText(String.valueOf(produto.get(0).getNomeProduto()));
-                preco.setText(String.valueOf(produto.get(0).getPrecoProduto()));
-                quantidade.setText(String.valueOf(produto.get(0).getQuantidadeEstoque()));
-
+            this.id.setText(String.valueOf(produto.get(0).getID()));
+            codigoDeBarras.setText(String.valueOf(produto.get(0).getCodigoDeBarras()));
+            nome.setText(String.valueOf(produto.get(0).getNomeProduto()));
+            preco.setText(String.valueOf(produto.get(0).getPrecoProduto()));
+            quantidade.setText(String.valueOf(produto.get(0).getQuantidadeEstoque()));
+        }
+        catch (Exception e) {
+            Toast.makeText(this, "ID não encontrado", Toast.LENGTH_LONG).show();
+            this.id.setText(" ");
+            this.codigoDeBarras.setText(" ");
+            this.nome.setText(" ");
+            this.preco.setText(" ");
+            this.quantidade.setText(" ");
+        }
 
     }
 
@@ -70,8 +74,13 @@ public class alterar_excluirprodutos extends AppCompatActivity {
 
         produtoDao.alterarProduto(produto);
 
-        Toast.makeText(this, "Produto alterado com sucesso - ID: " + id, Toast.LENGTH_SHORT).show();
-
+        Toast.makeText(this, "Produto atualizado com sucesso!" , Toast.LENGTH_LONG).show();
+        this.id.setText(" ");
+        this.codigoDeBarras.setText(" ");
+        this.nome.setText(" ");
+        this.preco.setText(" ");
+        this.quantidade.setText(" ");
+        this.id.requestFocus();
     }
 
     public void excluir(View v){
@@ -80,7 +89,20 @@ public class alterar_excluirprodutos extends AppCompatActivity {
 
         produtoDao.excluirProduto(id);
 
-        Toast.makeText(this, "Produto alterado com sucesso - ID: " + id, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Produto excluído com sucesso", Toast.LENGTH_SHORT).show();
+        this.id.setText(" ");
+        this.codigoDeBarras.setText(" ");
+        this.nome.setText(" ");
+        this.preco.setText(" ");
+        this.quantidade.setText(" ");
+        this.id.requestFocus();
 
     }
+
+//    public void voltar(View v){
+//
+//        Intent it = new Intent(alterar_excluirprodutos.this, MainActivity.class);
+//        startActivity(it);
+//
+//    }
 }

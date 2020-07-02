@@ -69,7 +69,7 @@ public class cadastro_produtos extends AppCompatActivity {
                     this.codigoBarras.requestFocus();
                     break;
                 case 2:  Toast.makeText(this, "O CÓDIGO DE BARRAS DEVE TER 6 DÍGITOS", Toast.LENGTH_SHORT).show();
-                    this.nomeProduto.requestFocus();
+                    this.codigoBarras.requestFocus();
                     break;
                 case 3:  Toast.makeText(this, "O CAMPO NOME É OBRIGATÓRIO", Toast.LENGTH_SHORT).show();
                     this.nomeProduto.requestFocus();
@@ -108,6 +108,13 @@ public class cadastro_produtos extends AppCompatActivity {
         startActivity(it);
 
     }
+
+//    public void voltar(View v){
+//
+//        Intent it = new Intent(cadastro_produtos.this, MainActivity.class);
+//        startActivity(it);
+//
+//    }
 
     public void cancelarCamposProdutos(View v){
         this.codigoBarras.setText(" ");

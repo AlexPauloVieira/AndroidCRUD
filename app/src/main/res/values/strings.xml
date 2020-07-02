@@ -25,7 +25,7 @@
     <string name="lblID">ID</string>
     <string name="lblCodigoBarras">Código de Barras</string>
     <string name="lblNomeProduto">Nome do Produto</string>
-    <string name="lblPrecoProduto">Preço do Produto</string>
+    <string name="lblPrecoProduto">Preço Produto</string>
     <string name="lblQuantidadeProduto">Estoque</string>
     <string name="buttonBucar">Buscar</string>
     <string name="buttonExcluirProduto">Excluir</string>

@@ -28,8 +28,7 @@ public class listar_produtos extends AppCompatActivity {
         produtoDao = new ProdutoDAO(this);
         produtos = produtoDao.obterTodosProdutos();
         produtosFiltrados.addAll(produtos);
-        ArrayAdapter<Produto> adaptador = new ArrayAdapter<Produto>(this, R.layout.my_textview, produtos);
-        //ArrayAdapter<Produto> adaptador = new ArrayAdapter<Produto>(this, android.R.layout.simple_list_item_1, produtos);
+        ArrayAdapter<Produto> adaptador = new ArrayAdapter<Produto>(this, R.layout.my_textview, produtos);//criei a textview pra mudar a cor do texto na listview
         listProduto.setAdapter(adaptador);
     }
 }
