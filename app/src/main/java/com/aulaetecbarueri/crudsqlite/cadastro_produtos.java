@@ -25,6 +25,7 @@ public class cadastro_produtos extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar);
         this.codigoBarras = (EditText) findViewById(R.id.codigoBarras);
+        this.codigoBarras.requestFocus();
         this.nomeProduto = (EditText) findViewById(R.id.nomeProduto);
         this.precoProduto = (EditText) findViewById(R.id.precoProduto);
         this.quantidadeProduto = (EditText) findViewById(R.id.quantidadeProduto);
@@ -50,7 +51,7 @@ public class cadastro_produtos extends AppCompatActivity {
             if (codigoBarras.equals("")  || codigoBarras.trim().isEmpty()){
                 opcaoErrada = 1;
             }
-            else if (codigoBarras.length() != 6) {
+            else if (codigoBarras.trim().length() < 6) {
                 opcaoErrada = 2;
             }
             else if (nomeProduto.equals("") || nomeProduto.trim().isEmpty()){
@@ -68,7 +69,7 @@ public class cadastro_produtos extends AppCompatActivity {
                 case 1 :  Toast.makeText(this, "O CAMPO CÓDIGO DE BARRAS É OBRIGATÓRIO", Toast.LENGTH_SHORT).show();
                     this.codigoBarras.requestFocus();
                     break;
-                case 2:  Toast.makeText(this, "O CÓDIGO DE BARRAS DEVE TER 6 DÍGITOS", Toast.LENGTH_SHORT).show();
+                case 2:  Toast.makeText(this, "O CÓDIGO DE BARRAS DEVE TER PELO MENOS 6 DÍGITOS", Toast.LENGTH_SHORT).show();
                     this.codigoBarras.requestFocus();
                     break;
                 case 3:  Toast.makeText(this, "O CAMPO NOME É OBRIGATÓRIO", Toast.LENGTH_SHORT).show();
@@ -95,7 +96,7 @@ public class cadastro_produtos extends AppCompatActivity {
                     this.nomeProduto.setText(" ");
                     this.precoProduto.setText(" ");
                     this.quantidadeProduto.setText(" ");
-                    this.nomeProduto.requestFocus();
+                    this.codigoBarras.requestFocus();
 
                     break;
             }

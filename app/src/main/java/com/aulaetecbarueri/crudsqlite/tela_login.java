@@ -29,6 +29,12 @@ public class tela_login extends AppCompatActivity {
             Toast errorToast = Toast.makeText(tela_login .this, "Campo Usuário não pode estar vazio", Toast.LENGTH_SHORT);
             errorToast.show();
         }
+        else if ( Character.isDigit(loginStr.charAt(0)) )
+        {
+            Toast errorToast = Toast.makeText(tela_login .this, "Comece com uma letra!", Toast.LENGTH_SHORT);
+            errorToast.show();
+            login.requestFocus();
+        }
         else if (passStr.equals("") || passStr.trim().isEmpty()) {
             Toast errorToast = Toast.makeText(tela_login .this, "Campo senha não pode estar vazio", Toast.LENGTH_SHORT);
             errorToast.show();

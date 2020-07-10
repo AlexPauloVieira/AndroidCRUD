@@ -29,6 +29,7 @@ public class alterar_excluirprodutos extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.action_bar);
 
         id = findViewById(R.id.ed_codigo);
+        this.id.requestFocus();
         codigoDeBarras = findViewById(R.id.ed_codigoDeBarras);
         nome = findViewById(R.id.nomeLista);
         preco = findViewById(R.id.precoLista);
